@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #4285F4;
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            background: #D32F2F;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        button:hover {
+            background: #B71C1C;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Login realizado com sucesso!</h1>
+    <p>Bem-vindo ao seu dashboard.</p>
+    <button id="logoutBtn">Sair</button>
+    
+    <!-- Firebase e Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Configuração do Firebase (deve ser igual ao auth.js)
+     const firebaseConfig = {
+     apiKey: "AIzaSyASoec9JeGFGqQD66FmmTggQaMVNSR0R3k",
+     authDomain: "tela-login-d91da.firebaseapp.com",
+     projectId: "tela-login-d91da",
+     storageBucket: "tela-login-d91da.firebasestorage.app",
+     messagingSenderId: "122460402473",
+     appId: "1:122460402473:web:7a17ac8510872461223d38"
+   };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+
+
+        // Botão de logout
+        document.getElementById("logoutBtn").addEventListener("click", () => {
+            auth.signOut().then(() => {
+                window.location.href = "login.html";
+            });
+        });
+        //Email de verificação - Funciona se executado no console, mas não no código
+        //auth.currentUser.sendEmailVerification() 
+
+        // Verifica se o usuário está logado, senão redireciona
+        auth.onAuthStateChanged((user) => {
+            if (!user) {
+                window.location.href = "login.html";
+            }
+        });
+    </script>
+</body>
+
+</html>

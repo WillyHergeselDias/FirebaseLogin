@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" required></div>
+            <div class="form-group"><label for="password">Senha</label><input type="password" id="password" required>
+            </div>
+            <div id="errorMessage" class="error"></div><button type="submit">Entrar</button>
+
+        </form>
+            <button id="loginGoogle" type="submit">Fazer login com o Google</button>
+            <button id="loginGithub" type="submit">Fazer login com o Github</button>
+            <p>Não possui uma conta? <a href="cadastro.html">Crie uma aqui</a></p>
+            <p>Esqueceu a senha? <a href="redifinicao_senha.html">Redifinir senha</a></p>
+    </div><!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Nosso script de autenticação -->
+    <script src="auth.js"></script>
+</body>
+
+</html>
