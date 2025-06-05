@@ -1,13 +1,12 @@
 // Configuração do Firebase (substitua com suas credenciais)
- const firebaseConfig = {
-    apiKey: "AIzaSyASoec9JeGFGqQD66FmmTggQaMVNSR0R3k",
-    authDomain: "tela-login-d91da.firebaseapp.com",
-    projectId: "tela-login-d91da",
-    storageBucket: "tela-login-d91da.firebasestorage.app",
-    messagingSenderId: "122460402473",
-    appId: "1:122460402473:web:7a17ac8510872461223d38"
-  };
-
+const firebaseConfig = {
+    apiKey: "SUA_API_KEY",
+    authDomain: "SEU_PROJETO.firebaseapp.com",
+    projectId: "SEU_PROJETO_ID",
+    storageBucket: "SEU_BUCKET.appspot.com",
+    messagingSenderId: "SEU_SENDER_ID",
+    appId: "SEU_APP_ID"
+};
 // Inicializa o Firebase
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
